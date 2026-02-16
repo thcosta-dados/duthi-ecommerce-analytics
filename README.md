@@ -109,6 +109,6 @@ Sinta-se à vontade para se conectar comigo no LinkedIn para discussões e colab
 
 ---
 
-## 🏷 Tags
+##  Tags
 
 Power BI | Data Engineering | ETL | Python | SQL | Dashboard Design | DAX | Business Intelligence
