@@ -9,7 +9,7 @@ O objetivo é permitir que os stakeholders monitorem e analisem as principais m�
 
 ## 📸 Visualização do Dashboard
 
-![Visão Geral do Dashboard](dashboard-overview.png)
+![Visão Geral do Dashboard](Duthi_Ecommerce_Analytics.png)
 
 ---
 
@@ -88,7 +88,6 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 
 * `Duthi_Ecommerce_Analytics.pbix` – Arquivo do relatório Power BI.
 * `etl_script.py` – Script Python utilizado para processamento dos dados.
-* `dataset/` – Pasta contendo dados de exemplo (anonimizados).
 
 ---
 
