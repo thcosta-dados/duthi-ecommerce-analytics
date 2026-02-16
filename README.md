@@ -9,7 +9,7 @@ O objetivo é permitir que os stakeholders monitorem e analisem as principais m�
 
 ## 📸 Visualização do Dashboard
 
-![Visão Geral do Dashboard](screenshots/dashboard-overview.png)
+![Visão Geral do Dashboard](dashboard-overview.png)
 
 ---
 
