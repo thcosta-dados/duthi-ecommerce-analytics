@@ -1,19 +1,19 @@
-# 💎 Dashboard de Análise de E-commerce Duthi – Power BI
+#  Dashboard de Análise de E-commerce Duthi – Power BI
 
-## 📌 Visão Geral do Projeto
+##  Visão Geral do Projeto
 
 Este projeto apresenta um **Dashboard Interativo de E-commerce** desenvolvido no Power BI para a **Duthi** (marca de semijoias).
 O objetivo é permitir que os stakeholders monitorem e analisem as principais métricas de vendas, o desempenho do mix de produtos (Prata vs. Ouro) e o comportamento de retenção de clientes ao longo de um período de 15 meses (Jul/2024 - Set/2025).
 
 ---
 
-## 📸 Visualização do Dashboard
+##  Visualização do Dashboard
 
 ![Visão Geral do Dashboard](Duthi_Ecommerce_Analytics.png)
 
 ---
 
-## 🎯 Objetivos de Negócio
+##  Objetivos de Negócio
 
 * Rastrear o faturamento total, volume de pedidos e tendências de ticket médio.
 * Analisar o desempenho dos produtos por categoria (Brincos, Colares, etc.) e tipo de material.
@@ -23,7 +23,7 @@ O objetivo é permitir que os stakeholders monitorem e analisem as principais m�
 
 ---
 
-## ⚙️ Engenharia de Dados (ETL & Pipeline)
+##  Engenharia de Dados (ETL & Pipeline)
 
 Antes da visualização, foi desenvolvido um pipeline de engenharia de dados robusto para garantir a integridade e segurança das informações:
 
@@ -34,7 +34,7 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 
 ---
 
-## 📊 Principais KPIs
+##  Principais KPIs
 
 * **Faturamento Total:** R$ 16,1 Mil
 * **Total de Pedidos:** 200
@@ -44,7 +44,7 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 
 ---
 
-## 🚀 Funcionalidades do Dashboard
+##  Funcionalidades do Dashboard
 
 * **Visão Executiva (One-Page):** Visualização consolidada de todas as métricas críticas em uma única tela.
 * **Classificação Automática de Material:** Lógica DAX para categorizar produtos automaticamente entre "Prata 925" e "Banhado a Ouro".
@@ -55,7 +55,7 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 
 ---
 
-## 🛠 Ferramentas e Tecnologias
+##  Ferramentas e Tecnologias
 
 * **Power BI** (Desktop)
 * **Python (Pandas & Hashlib)** para ETL e Anonimização de Dados.
@@ -65,7 +65,7 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 
 ---
 
-## 🧠 Habilidades Demonstradas
+##  Habilidades Demonstradas
 
 * **Engenharia de Dados:** Pipeline ETL, Limpeza de Dados e Anonimização (Segurança).
 * **Modelagem de Dados:** Implementação de Star Schema e relacionamentos.
@@ -75,7 +75,7 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 
 ---
 
-## 🔍 Principais Insights
+##  Principais Insights
 
 * **Problema Crítico de Retenção:** 93% dos clientes não retornam para uma segunda compra, representando uma perda potencial de receita de ~R$ 6.500/ano.
 * **Preferência de Material:** "Prata 925" impulsiona a maioria do volume de vendas (~62%) em comparação com itens Banhados a Ouro.
@@ -84,14 +84,14 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 
 ---
 
-## 📂 Arquivos do Projeto
+##  Arquivos do Projeto
 
 * `Duthi_Ecommerce_Analytics.pbix` – Arquivo do relatório Power BI.
 * `etl_script.py` – Script Python utilizado para processamento dos dados.
 
 ---
 
-## 🚀 Como Usar
+##  Como Usar
 
 1.  Baixe o arquivo `.pbix` deste repositório.
 2.  Abra no **Power BI Desktop**.
@@ -100,7 +100,7 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 
 ---
 
-## 📫 Feedback e Contato
+##  Feedback e Contato
 
 Feedbacks e sugestões são bem-vindos.
 Sinta-se à vontade para se conectar comigo no LinkedIn para discussões e colaboração.
