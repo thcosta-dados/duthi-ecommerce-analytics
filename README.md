@@ -2,8 +2,8 @@
 
 ##  Visão Geral do Projeto
 
-Este projeto apresenta uma solução de dados **End-to-End** (Engenharia e Analytics) desenvolvida para a **Duthi** (marca de semijoias).
-O objetivo é permitir que os stakeholders monitorem as principais métricas de vendas, o desempenho do mix de produtos (Prata vs. Ouro) e, crucialmente, identifiquem gargalos de **retenção de clientes** (Churn) ao longo de 15 meses.
+Este projeto apresenta uma solução de dados **End-to-End** (Engenharia e Analytics) em um cenário de negócios real: a **Duthi**, um e-commerce de semijoias onde participo ativamente da gestão e operação.
+O objetivo é desenvolver uma solução de dados completa para monitorar as principais métricas de vendas, o desempenho do mix de produtos (Prata vs. Ouro) e, crucialmente, identificar gargalos de **retenção de clientes** (Churn) ao longo de 15 meses.
 
 ---
 
