@@ -3,7 +3,7 @@
 ##  Visão Geral do Projeto
 
 Este projeto apresenta uma solução de dados **End-to-End** (Engenharia e Analytics) em um cenário de negócios real: a **Duthi**, um e-commerce de semijoias onde participo ativamente da gestão e operação.
-O objetivo é desenvolver uma solução de dados completa para monitorar as principais métricas de vendas, o desempenho do mix de produtos (Prata vs. Ouro) e, crucialmente, identificar gargalos de **retenção de clientes** (Churn) ao longo de 15 meses.
+O objetivo foi sair da gestão baseada em feeling e auditar os dados para responder a uma pergunta crítica: por que o faturamento se mantinha estável, mas a base de clientes parecia estagnada? A resposta veio através da análise de Churn."
 
 ---
 
