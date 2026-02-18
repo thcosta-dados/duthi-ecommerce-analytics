@@ -2,8 +2,8 @@
 
 ##  Visão Geral do Projeto
 
-Este projeto apresenta um **Dashboard Interativo de E-commerce** desenvolvido no Power BI para a **Duthi** (marca de semijoias).
-O objetivo é permitir que os stakeholders monitorem e analisem as principais métricas de vendas, o desempenho do mix de produtos (Prata vs. Ouro) e o comportamento de retenção de clientes ao longo de um período de 15 meses (Jul/2024 - Set/2025).
+Este projeto apresenta uma solução de dados **End-to-End** (Engenharia e Analytics) desenvolvida para a **Duthi** (marca de semijoias).
+O objetivo é permitir que os stakeholders monitorem as principais métricas de vendas, o desempenho do mix de produtos (Prata vs. Ouro) e, crucialmente, identifiquem gargalos de **retenção de clientes** (Churn) ao longo de 15 meses.
 
 ---
 
@@ -15,22 +15,36 @@ O objetivo é permitir que os stakeholders monitorem e analisem as principais m�
 
 ##  Objetivos de Negócio
 
-* Rastrear o faturamento total, volume de pedidos e tendências de ticket médio.
-* Analisar o desempenho dos produtos por categoria (Brincos, Colares, etc.) e tipo de material.
-* Identificar gargalos críticos na retenção de clientes (Análise de Churn).
-* Avaliar tendências sazonais (melhores dias da semana para vendas).
-* Habilitar a tomada de decisão baseada em dados para campanhas de marketing e reposição de estoque.
+* Rastrear faturamento, volume de pedidos e tendências de ticket médio.
+* Analisar a performance de produtos por categoria e material (Prata vs. Ouro).
+* **Diagnóstico de Retenção:** Identificar taxas de recompra e churn.
+* **Sazonalidade:** Mapear melhores dias da semana para campanhas.
+* Suportar decisões de reposição de estoque baseadas em dados reais.
 
 ---
 
-##  Engenharia de Dados (ETL & Pipeline)
+##  Engenharia de Dados (ETL e Pipeline)
 
-Antes da visualização, foi desenvolvido um pipeline de engenharia de dados robusto para garantir a integridade e segurança das informações:
+A confiabilidade dos dados foi garantida através de um pipeline robusto antes da visualização:
 
-1.  **Pipeline ETL com Python:** Desenvolvimento de script (`etl_completo.py`) utilizando `Pandas` para extração, limpeza e tipagem dos dados brutos (CSV).
-2.  **Conformidade com LGPD:** Implementação de algoritmos de *hashing* (SHA-256) para anonimizar dados sensíveis dos clientes (CPF, E-mail, Telefone) antes da carga no banco.
-3.  **Modelagem Dimensional (Star Schema):** Estruturação do banco de dados PostgreSQL em tabelas Fato (Transações) e Dimensão (Produtos/Calendário).
-4.  **Views Otimizadas:** Criação de 9 Views SQL para pré-processar agregações complexas e entregar dados leves ao Power BI.
+1.  **Pipeline ETL com Python:** Script (`etl_completo.py`) utilizando `Pandas` para limpeza, tipagem e tratamento de nulos.
+2.  **Segurança (LGPD):** Aplicação de *hashing* (SHA-256) para anonimizar dados sensíveis (CPF, E-mail) antes da persistência.
+3.  **Modelagem Dimensional:** Estruturação de *Star Schema* no PostgreSQL com tabelas Fato e Dimensão bem definidas.
+4.  **Otimização de Banco:** Criação de Índices (`CREATE INDEX`) e *Constraints* para garantir integridade referencial e performance de consulta.
+
+---
+
+##  SQL Analytics e Exploração (EDA)
+
+A inteligência do projeto não está limitada ao Power BI. Uma camada profunda de análise exploratória e validação de regras de negócio foi realizada via SQL.
+
+**Destaques Técnicos dos Scripts SQL:**
+* **Análise de Cohort & Retenção:** Uso de CTEs para mapear o comportamento de recompra.
+* **Window Functions:** Aplicação de `RANK()`, `LAG()` e `AVG() OVER` para cálculos de crescimento (MoM) e médias móveis.
+* **Feature Engineering:** Categorização de frete e segmentação de clientes via SQL.
+
+📄 **[Ver Script de Estrutura e Views (DDL)](01_schema_and_views.sql)** – *Modelagem e Otimização.*
+📄 **[Ver Script de Análise de Negócio (EDA)](02_analytical_queries.sql)** – *Insights Avançados.*
 
 ---
 
@@ -40,54 +54,43 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 * **Total de Pedidos:** 200
 * **Ticket Médio:** R$ 80,6
 * **Clientes Únicos:** 189
-* **Taxa de Retenção:** ~7% (93% dos clientes compraram apenas uma vez)
+* **Taxa de Retenção:** ~7% (Alerta crítico de negócio identificado via SQL/DAX)
 
 ---
 
 ##  Funcionalidades do Dashboard
 
-* **Visão Executiva (One-Page):** Visualização consolidada de todas as métricas críticas em uma única tela.
-* **Classificação Automática de Material:** Lógica DAX para categorizar produtos automaticamente entre "Prata 925" e "Banhado a Ouro".
-* **Sistema de Alerta de Retenção:** Destaque visual para baixas taxas de retenção com estimativa de impacto financeiro.
-* **Análise Sazonal:** Detalhamento do desempenho de vendas por dia da semana.
-* **Ranking de Top Categorias:** Visualização da distribuição de receita por tipo de produto.
-* **Filtros Interativos:** Segmentação de dados por data para análises aprofundadas.
+* **Visão Executiva (One-Page):** KPI cards e gráficos de tendência consolidados.
+* **Classificação Dinâmica:** Lógica DAX para segmentação automática "Prata 925" vs "Banhado a Ouro".
+* **Alertas de Negócio:** Visualização de impacto financeiro do Churn.
+* **Análise de Cross-Selling:** Identificação de tamanho de cesta ideal.
 
 ---
 
 ##  Ferramentas e Tecnologias
 
-* **Power BI** (Desktop)
-* **Python (Pandas & Hashlib)** para ETL e Anonimização de Dados.
-* **SQL (PostgreSQL)** para Modelagem de Dados e Views.
-* **DAX** (Data Analysis Expressions) para medidas de negócio.
-* **Microsoft Excel / CSV** como fontes de dados originais.
-
----
-
-##  Habilidades Demonstradas
-
-* **Engenharia de Dados:** Pipeline ETL, Limpeza de Dados e Anonimização (Segurança).
-* **Modelagem de Dados:** Implementação de Star Schema e relacionamentos.
-* **DAX Avançado:** Uso de `SWITCH`, `SEARCH` e `CALCULATE`.
-* **Design de Dashboard:** UI/UX moderna (Paleta personalizada, bordas arredondadas, neumorfismo).
-* **Storytelling de Dados:** Transformação de números em insights de negócio acionáveis.
+* **SQL (PostgreSQL):** DDL, DML, Window Functions, CTEs e Views.
+* **Python (Pandas & Hashlib):** ETL e Anonimização.
+* **Power BI (Desktop):** DAX Avançado (`SWITCH`, `CALCULATE`) e UI/UX.
+* **Git/GitHub:** Versionamento e Documentação.
 
 ---
 
 ##  Principais Insights
 
-* **Problema Crítico de Retenção:** 93% dos clientes não retornam para uma segunda compra, representando uma perda potencial de receita de ~R$ 6.500/ano.
-* **Preferência de Material:** "Prata 925" impulsiona a maioria do volume de vendas (~62%) em comparação com itens Banhados a Ouro.
-* **Top Categoria:** "Brincos" são a categoria mais vendida, representando 42% da receita total.
-* **Melhores Dias de Venda:** Sexta-feira e Quinta-feira apresentam os maiores tickets médios, ideais para o lançamento de novas coleções.
+* **Problema Crítico de Retenção:** 93% dos clientes não retornam, gerando perda estimada de ~R$ 6.5k/ano.
+* **Mix de Produtos:** A prata (62%) domina a preferência sobre o ouro, guiando reposição de estoque.
+* **Top Categoria:** "Brincos" representam 42% da receita total.
+* **Sazonalidade:** Quinta e Sexta-feira concentram os maiores tickets médios.
 
 ---
 
 ##  Arquivos do Projeto
 
-* `Duthi_Ecommerce_Analytics.pbix` – Arquivo do relatório Power BI.
-* `etl_script.py` – Script Python utilizado para processamento dos dados.
+* `Duthi_Ecommerce_Analytics.pbix` – Arquivo do dashboard interativo.
+* `01_schema_and_views.sql` – Criação do Banco, Tabelas e Views.
+* `02_analytical_queries.sql` – Queries de análise exploratória e validação.
+* `etl_completo.py` – Script Python de tratamento de dados.
 
 ---
 
@@ -95,15 +98,11 @@ Antes da visualização, foi desenvolvido um pipeline de engenharia de dados rob
 
 1.  Baixe o arquivo `.pbix` deste repositório.
 2.  Abra no **Power BI Desktop**.
-3.  Use o filtro de data (canto superior direito) para interagir com o dashboard.
-4.  Passe o mouse sobre os gráficos para ver detalhes específicos (Tooltips).
+3.  Para reproduzir o banco de dados, execute os scripts `.sql` em um ambiente PostgreSQL.
 
 ---
 
 ##  Feedback e Contato
-
-Feedbacks e sugestões são bem-vindos.
-Sinta-se à vontade para se conectar comigo no LinkedIn para discussões e colaboração.
 
 * **LinkedIn:** [Acessar meu Perfil](https://www.linkedin.com/in/thiago-costa-dados/)
 
