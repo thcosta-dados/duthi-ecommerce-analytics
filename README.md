@@ -78,7 +78,7 @@ A inteligência do projeto não está limitada ao Power BI. Uma camada profunda 
 
 ##  Principais Insights
 
-* **Problema Crítico de Retenção:** 93% dos clientes não retornam, gerando perda estimada de ~R$ 6.5k/ano.
+* **Problema Crítico de Retenção:** 93% dos clientes compraram uma única vez. Elevar a taxa de recompra de 7% para a meta de 25% significaria cerca de 34 clientes a mais voltando a comprar, o equivalente a ~R$ 2,7 mil em receita adicional no período (34 × ticket médio de R$ 80,6).
 * **Mix de Produtos:** A prata (62%) domina a preferência sobre o ouro, guiando reposição de estoque.
 * **Top Categoria:** "Brincos" representam 42% da receita total.
 * **Sazonalidade:** Quinta e Sexta-feira concentram os maiores tickets médios.
