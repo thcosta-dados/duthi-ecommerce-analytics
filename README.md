@@ -29,7 +29,7 @@ A confiabilidade dos dados foi garantida através de um pipeline robusto antes d
 
 1.  **Pipeline ETL com Python:** Script (`etl_completo.py`) utilizando `Pandas` para limpeza, tipagem e tratamento de nulos.
 2.  **Segurança (LGPD):** Aplicação de *hashing* (SHA-256) para anonimizar dados sensíveis (CPF, E-mail) antes da persistência.
-3.  **Modelagem Dimensional:** Estruturação de *Star Schema* no PostgreSQL com tabelas Fato e Dimensão bem definidas.
+3.  **Modelagem Relacional:** Banco no PostgreSQL com tabela fato de itens vendidos ligada a pedidos e ao catálogo de produtos por chaves estrangeiras; no Power BI, tabela calendário (`dCalendario`) para análises temporais.
 4.  **Otimização de Banco:** Criação de Índices (`CREATE INDEX`) e *Constraints* para garantir integridade referencial e performance de consulta.
 
 ---
@@ -79,7 +79,7 @@ A inteligência do projeto não está limitada ao Power BI. Uma camada profunda 
 ##  Principais Insights
 
 * **Problema Crítico de Retenção:** 93% dos clientes compraram uma única vez. Elevar a taxa de recompra de 7% para a meta de 25% significaria cerca de 34 clientes a mais voltando a comprar, o equivalente a ~R$ 2,7 mil em receita adicional no período (34 × ticket médio de R$ 80,6).
-* **Mix de Produtos:** A prata (62%) domina a preferência sobre o ouro, guiando reposição de estoque.
+* **Faturamento por Material:** A prata 925 responde por 62% do faturamento (contra 38% do banhado a ouro), guiando a reposição de estoque.
 * **Top Categoria:** "Brincos" representam 42% da receita total.
 * **Sazonalidade:** Quinta e Sexta-feira concentram os maiores tickets médios.
 
