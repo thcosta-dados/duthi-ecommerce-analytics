@@ -71,7 +71,7 @@ A inteligência do projeto não está limitada ao Power BI. Uma camada profunda 
 
 * **SQL (PostgreSQL):** DDL, DML, Window Functions, CTEs e Views.
 * **Python (Pandas & Hashlib):** ETL e Anonimização.
-* **Power BI (Desktop):** DAX Avançado (`SWITCH`, `CALCULATE`) e UI/UX.
+* **Power BI (Desktop):** DAX (`SWITCH`, `CALCULATE`) e UI/UX.
 * **Git/GitHub:** Versionamento e Documentação.
 
 ---
